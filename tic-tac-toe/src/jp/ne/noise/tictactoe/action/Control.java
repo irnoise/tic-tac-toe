@@ -7,5 +7,7 @@ public class Control {
 	public static void main(String[] args) {
 		Display display = new Display();
 		Board board = new Board();
+
+		display.viewBoard(board.getHex());
 	}
 }

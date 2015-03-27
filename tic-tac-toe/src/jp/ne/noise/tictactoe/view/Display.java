@@ -14,7 +14,24 @@ public class Display {
 
 		for (int[] i : hex) {
 			for (int j : i) {
-				System.out.print(j);
+
+				switch (j) {
+					case 1:
+
+					System.out.print("○");
+					break;
+
+					case 2:
+
+					System.out.print("×");
+					break;
+
+					default:
+					System.out.print("□");
+
+					break;
+				}
+
 				count++;
 				if (count == 3) {
 					System.out.println();
@@ -22,5 +39,7 @@ public class Display {
 				}
 			}
 		}
+
 	}
+
 }

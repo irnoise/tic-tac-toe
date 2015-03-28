@@ -2,44 +2,31 @@ package jp.ne.noise.tictactoe.view;
 
 
 public class Display {
+    private final static String SHAPE[] = {"□", "○", "×"};
 
-	public Display() {
-		System.out.println("*************************");
-		System.out.println("*      Tic-tac-toe      *");
-		System.out.println("*************************");
-	}
+    public Display() {
+        System.out.println("*************************");
+        System.out.println("*      Tic-tac-toe      *");
+        System.out.println("*************************");
+    }
 
-	public void viewBoard(int[][] hex) {
-		int count = 0;
+    public void viewBoard(int[][] hex) {
+        int count = 0;
 
-		for (int[] i : hex) {
-			for (int j : i) {
+        for (int[] i : hex) {
+            for (int j : i) {
 
-				switch (j) {
-					case 1:
+                System.out.print(SHAPE[j]);
 
-					System.out.print("○");
-					break;
+                count++;
+                if (count == 3) {
+                    System.out.println();
+                    count = 0;
+                }
 
-					case 2:
+            }
+        }
 
-					System.out.print("×");
-					break;
-
-					default:
-					System.out.print("□");
-
-					break;
-				}
-
-				count++;
-				if (count == 3) {
-					System.out.println();
-					count = 0;
-				}
-			}
-		}
-
-	}
+    }
 
 }

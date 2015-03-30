@@ -1,7 +1,7 @@
 package jp.ne.noise.tictactoe.model;
 
 public class Board {
-    private static int[][] hex;
+    private int[][] hex;
 
     public Board() {
         hex = new int[3][3];
@@ -18,7 +18,7 @@ public class Board {
     }
 
     public void setHex(int[][] hex) {
-        Board.hex = hex;
+        this.hex = hex;
     }
 
 }

@@ -20,21 +20,11 @@ public class Control {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = null;
 
-        /*
-         * ゲーム開始
-         */
-        display.showBoard(board.getHex());
+        display.showBoard(board);
 
-        /*
-         * Playerの手番
-         */
-
-        /*
-         * Computerの手番
-         */
         while (true) {
-
-            display.showMessage("0～8までの数字を入力してEnterキーを押して下さい。");
+            display.showMessage("◆ Playerの手番です ◆");
+            display.showMessage("1～9までの数字を入力してEnterキーを押して下さい");
 
             try {
                 s = reader.readLine();
@@ -49,14 +39,17 @@ public class Control {
                 continue;
             }
 
-            int[][] hex = player.put(Integer.parseInt(s), board.getHex());
-            board.setHex(hex);
-            display.showBoard(board.getHex());
+            errorMsg = player.put(Integer.parseInt(s), board);
+            if (errorMsg != null) {
+                display.showErrorMessage(errorMsg);
+                continue;
+            }
 
-            display.showMessage("Computerの手番です...");
-            hex = computer.put(0, board.getHex());
-            board.setHex(hex);
-            display.showBoard(board.getHex());
+            display.showBoard(board);
+
+            display.showMessage("◆ Computerの手番です ◆");
+            computer.put(board);
+            display.showBoard(board);
         }
 
     }

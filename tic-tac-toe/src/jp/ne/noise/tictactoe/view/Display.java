@@ -1,7 +1,10 @@
 package jp.ne.noise.tictactoe.view;
 
+import jp.ne.noise.tictactoe.model.Board;
+
 public class Display {
-    private final static String SHAPE[] = {"□", "○", "×"};
+                                          /*０    １   ２  ３   ４*/
+    private final static String SHAPE[] = {"□", "○", "", "", "☓"};
 
     public Display() {
         System.out.println("*************************");
@@ -9,7 +12,8 @@ public class Display {
         System.out.println("*************************");
     }
 
-    public void showBoard(int[][] hex) {
+    public void showBoard(Board board) {
+        int[][] hex = board.getHex();
         int count = 0;
 
         showSpace();

@@ -1,15 +1,14 @@
 package jp.ne.noise.tictactoe.model;
 
-public class Player extends Human {
+public class Player {
+    public String put(int n, Board board) {
+        boolean result = new PutLogic().execute(1, (n-1), board);
 
-    @Override
-    public int[][] put(int n, int[][] hex) {
-        int row = n /3;
-        int column = n % 3;
+        if (! result) {
+            return "その場所には置けません";
+        }
 
-        hex[row][column] = 1;
-
-        return hex;
+        return null;
     }
 
 }

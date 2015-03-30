@@ -9,8 +9,10 @@ public class Display {
         System.out.println("*************************");
     }
 
-    public void viewBoard(int[][] hex) {
+    public void showBoard(int[][] hex) {
         int count = 0;
+
+        showSpace();
 
         for (int[] i : hex) {
             for (int j : i) {
@@ -26,6 +28,20 @@ public class Display {
             }
         }
 
+        showSpace();
+    }
+
+    public void showSpace() {
+        System.out.println();
+    }
+
+    public void showMessage(String message) {
+        System.out.println(message);
+    }
+
+    public void showErrorMessage(String message) {
+        System.out.println(message);
+        showSpace();
     }
 
 }

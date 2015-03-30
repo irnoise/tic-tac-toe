@@ -1,5 +1,5 @@
 package jp.ne.noise.tictactoe.model;
 
 public abstract class Human {
-    public abstract void put(int[][] hex);
+    public abstract int[][] put(int n, int[][] hex);
 }

@@ -6,7 +6,8 @@ package jp.ne.noise.tictactoe.view;
 
 import jp.ne.noise.tictactoe.model.Board;
 
-public class Display {                                      /*０    １   ２  ３   ４*/
+public class Display {
+                                          /*０    １   ２  ３   ４*/
     private final static String SHAPE[] = {"□", "○", "", "", "☓"};
 
     public Display() {

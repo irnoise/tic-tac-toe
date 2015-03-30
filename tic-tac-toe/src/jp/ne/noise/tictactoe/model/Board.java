@@ -7,9 +7,9 @@
 package jp.ne.noise.tictactoe.model;
 
 public class Board {
-    public static final int ROW_LENGTH      = 3;
-    public static final int COLUMN_LENGTH   = 3;
-    public static final int HEX_LENGTH      = ROW_LENGTH * COLUMN_LENGTH;
+    public static final int ROW_LENGTH      = 3;                            // 行の数
+    public static final int COLUMN_LENGTH   = 3;                            // 列の数
+    public static final int HEX_LENGTH      = ROW_LENGTH * COLUMN_LENGTH;   // マス目の数
 
     private int[][] hex;
 

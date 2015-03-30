@@ -8,20 +8,10 @@ import jp.ne.noise.tictactoe.model.Board;
 import jp.ne.noise.tictactoe.view.Display;
 
 public class Control {
-	public static void main(String[] args) {
-		Display display = new Display();
-		Board board = new Board();
+    public static void main(String[] args) {
+        Display display = new Display();
+        Board board = new Board();
 
-		display.init();
-
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		try {
-			reader.readLine();
-		} catch (IOException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
-
-		System.out.println("Start");
-	}
+        display.viewBoard(board.getHex());
+    }
 }

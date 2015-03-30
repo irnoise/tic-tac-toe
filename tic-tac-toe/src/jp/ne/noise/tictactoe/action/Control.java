@@ -11,6 +11,7 @@ import jp.ne.noise.tictactoe.model.Validator;
 import jp.ne.noise.tictactoe.view.Display;
 
 public class Control {
+
     public static void main(String[] args) {
         Display display = new Display();
         Board board = new Board();
@@ -24,7 +25,7 @@ public class Control {
 
         while (result == 0) {
             display.showMessage("◆ Playerの手番です ◆");
-            display.showMessage("1～9までの数字を入力してEnterキーを押して下さい");
+            display.showMessage("1～" + Board.HEX_LENGTH + "までの数字を入力してEnterキーを押して下さい");
 
             String s = null;
             try {
@@ -34,7 +35,7 @@ public class Control {
                 System.exit(0);
             }
 
-            String errorMsg = validator.validate(s, board.getHex());
+            String errorMsg = validator.validate(s, board);
             if (errorMsg != null) {
                 display.showErrorMessage(errorMsg);
                 continue;

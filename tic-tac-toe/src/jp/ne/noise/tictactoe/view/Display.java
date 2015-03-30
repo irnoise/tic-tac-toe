@@ -1,9 +1,12 @@
+/*
+ * コンソール画面の表示を管理
+ */
+
 package jp.ne.noise.tictactoe.view;
 
 import jp.ne.noise.tictactoe.model.Board;
 
-public class Display {
-                                          /*０    １   ２  ３   ４*/
+public class Display {                                      /*０    １   ２  ３   ４*/
     private final static String SHAPE[] = {"□", "○", "", "", "☓"};
 
     public Display() {
@@ -14,28 +17,20 @@ public class Display {
 
     public void showBoard(Board board) {
         int[][] hex = board.getHex();
-        int count = 0;
 
-        showSpace();
+        showBlank();
 
         for (int[] i : hex) {
             for (int j : i) {
-
                 System.out.print(SHAPE[j]);
-
-                count++;
-                if (count == 3) {
-                    System.out.println();
-                    count = 0;
-                }
-
             }
+            showBlank();
         }
 
-        showSpace();
+        showBlank();
     }
 
-    public void showSpace() {
+    public void showBlank() {
         System.out.println();
     }
 
@@ -45,7 +40,7 @@ public class Display {
 
     public void showErrorMessage(String message) {
         System.out.println(message);
-        showSpace();
+        showBlank();
     }
 
 }

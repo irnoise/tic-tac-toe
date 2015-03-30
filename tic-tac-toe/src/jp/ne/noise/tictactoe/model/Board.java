@@ -1,10 +1,20 @@
+/**
+ * マス目の状態をhexに保存する
+ * int[][] getHex()
+ * void    setHex(int[][] hex)
+ */
+
 package jp.ne.noise.tictactoe.model;
 
 public class Board {
+    public static final int ROW_LENGTH      = 3;
+    public static final int COLUMN_LENGTH   = 3;
+    public static final int HEX_LENGTH      = ROW_LENGTH * COLUMN_LENGTH;
+
     private int[][] hex;
 
     public Board() {
-        hex = new int[3][3];
+        hex = new int[ROW_LENGTH][COLUMN_LENGTH];
 
         for (int[] i : hex) {
             for (int j : i) {

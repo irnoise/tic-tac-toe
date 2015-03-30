@@ -18,14 +18,15 @@ public class Control {
         Computer computer = new Computer();
         Validator validator = new Validator();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String s = null;
+        int result = 0;
 
         display.showBoard(board);
 
-        while (true) {
+        while (result == 0) {
             display.showMessage("◆ Playerの手番です ◆");
             display.showMessage("1～9までの数字を入力してEnterキーを押して下さい");
 
+            String s = null;
             try {
                 s = reader.readLine();
             } catch (IOException e) {
@@ -52,6 +53,8 @@ public class Control {
             display.showBoard(board);
         }
 
+        display.showMessage("ゲーム終了");
+        display.showBoard(board);
     }
 
 
